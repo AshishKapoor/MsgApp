@@ -1,0 +1,26 @@
+{% load staticfiles %}
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>MSG APP</title>
+
+    <!-- Bootstrap core CSS into Django-->
+    <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
+    <!-- Custom styles for this template into Django-->
+    <link href="{% static 'css/navbar.css' %}" rel="stylesheet">
+  </head>
+
+  <body>
+      {% include 'navbar.html' %}
+
+    <div class="container" name="whatever">
+        {% block content %}
+
+        {% endblock %}
+    </div> <!-- /container -->
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="{% static 'js/jquery.min.js' %}"></script>
+  </body>
+</html>

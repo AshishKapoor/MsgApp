@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+    Archive Messages
+    {% if queryset %}
+    <table class="table">
+    {% for instance in queryset %}
+        <tr><td>{{ forloop.counter }}</td><td>{{ instance.message }} </td> <td> {{ instance.full_name }} </td></tr>
+    {% endfor %}
+    </table>
+    {% endif %}
+</form>
+{% endblock %}

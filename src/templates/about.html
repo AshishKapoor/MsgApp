@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>About Page</title>
+
+    </head>
+    <body>
+
+        {% block content %}
+        <div class="text-center">
+        <h1> About Me:</h1>
+            <p>
+                <b><h3>Ashish Kapoor</h3></b>
+                <h4>A-3/144 SF Paschim Vihar New Delhi 110063</h4>
+                <h4>+91-9899771880</h4>
+                <b><a href="https://in.linkedin.com/in/ashishkapoor1">LinkedIn Profile</a></b>,
+                <b><a href="https://github.com/AshishKapoor">Github Profile</a></b>
+                <a href="/static/data/Resume_Ashish.pdf">Resume</a>
+            </p>
+        </div>
+        {% endblock %}
+
+    </body>
+</html>
