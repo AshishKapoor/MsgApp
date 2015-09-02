@@ -4,23 +4,36 @@
 <!DOCTYPE html>
 <html>
 <head>
+
 </head>
 <body>
 
     {% block content %}
     <div class="col-md-6 col-sm-offset-3">
-    <h1>{{ title }}</h1>
+        <h1>{{ title }}</h1>
     </div>
     <div class="row">
 
         <div class="col-md-6 col-sm-offset-3">
-            <form action="." method="POST">{% csrf_token %}
+
+            <form action="." method="POST" >{% csrf_token %}
                 {{ form|crispy }}
-                <input class="btn btn-primary" type="submit" value="Submit" >
+                <input class="btn btn-primary" type="submit" value="Send">
             </form>
+            <br>
+
+            {% if messages %}
+            <div class="alert alert-success" role="alert">
+                <ul class="messages">
+                    {% for message in messages %}
+                    {{ message }}
+                    {% endfor %}
+                </ul>
+            </div>
+            {% endif %}
 
         </div>
     </div>
-{% endblock %}
+    {% endblock %}
 </body>
 </html>

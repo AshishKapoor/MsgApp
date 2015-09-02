@@ -38,6 +38,7 @@ def contact(request):
         instance = form.save(commit=False)
         instance.save()
         messages.success(request, 'Message sent! via MSG App')
+        #return HttpResponse("Successfully submitted")
 
     return render(request, "forms.html", context)
 
