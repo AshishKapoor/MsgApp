@@ -19,13 +19,6 @@ class msgForm(forms.ModelForm):
     class Meta:
         model = msg
         fields = ['full_name','message']
-        #exclude = ['full_name']   #Other ways to exclude fields
-
-
-def clean_full_name(self):
-	full_name = self.cleaned_data.get('full_name')
-	#write validation code.
-	return full_name
 
 class allMsgsForm(forms.Form):
 	anything = forms.CharField(required=False)

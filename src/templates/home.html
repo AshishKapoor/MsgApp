@@ -7,23 +7,21 @@
 {% extends "base.html" %}
 {% load crispy_forms_tags %}
 
-            {% block content %}
-            <div class="text-center">
-                <h1> What's up! {{ title }}</h1>
+{% block content %}
+<div class="col-md-6 col-sm-offset-3">
+    {% if request.user.is_authenticated %}
+    <h1> Welcome {{ title }} </h1>
+    <p>So "{{ title }}" What may I help you with today? Feel free to explore the msg application built on the Django Framework 1.8.4 with love of Python v3.4.3<br></p>
+    {% endif %}
+</div>
 
-            </div>
-                    <div class="col-md-6 col-sm-offset-3">
-                        {% if request.user.is_authenticated %}
-                        <p>So "{{title}}" What may I help you with today? Feel free to explore the msg application built on the Django Framework 1.8.4, Python v3.4.3<br>
+<div class="text-center">
+    {% if not request.user.is_authenticated %}
+    <h1> Welcome to MSG Application</h1>
+    {% endif %}
 
-                        </p>
-                        {% endif %}
-                    </div>
-            {% if messages %}
-            <ul class="messages">
-                {% for message in messages %}
-                <p>{{ message }}</p>
-                {% endfor %}
-            </ul>
-            {% endif %}
-            {% endblock %}
+</div>
+
+<img src="/static/img/django-logo.png" alt="" />
+<br><img src="/static/img/python-logo.png" alt="" />
+{% endblock %}
