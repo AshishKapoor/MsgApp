@@ -44,7 +44,7 @@ def contact(request):
 
 #Retreive all messages from the database using QuerySet.
 def allMsgs(request):
-    title = 'All Messages'
+    title = 'All Messages from Specified User'
     title_align_center = True
     form = allMsgsForm(request.POST or None)
     context = {
@@ -52,8 +52,10 @@ def allMsgs(request):
     "title": title,
     "title_align_center": title_align_center,
     }
-    if request.user.is_authenticated() and request.user.is_staff:
-        queryset = msg.objects.all().order_by('-timestamp')
+
+    if request.user.is_authenticated() and request.user.is_authenticated:
+        queryset = msg.objects.all()
+        # queryset = msg.objects.all().order_by('-timestamp')
     context = {
         "queryset": queryset
     }

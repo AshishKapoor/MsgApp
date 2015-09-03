@@ -2,13 +2,13 @@
 {% load crispy_forms_tags %}
 
 {% block content %}
-    <div class="text-left">
+    <div class="text-center col-sm-8 col-md-offset-2">
 
 
-    <h1>All Messages</h1>
+    <h1>All Messages:</h1>
     {% if queryset %}
     <table class="table">
-        <tr><th>S.No.</th><th>Sender's Name</th><th>Message</th></tr>
+        <tr><th class="text-center">S.No.</th><th class="text-center">Sender's Name</th><th class="text-center">Message</th></tr>
     {% for instance in queryset %}
         <tr><td>{{ forloop.counter }}</td><td>{{ instance.full_name }} </td> <td> {{ instance.message }} </td></tr>
     {% endfor %}
